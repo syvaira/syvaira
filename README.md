@@ -16,16 +16,6 @@
 
 ---
 
-## ⚡️ About
-
-**Syvaira** is a sovereign validator and infrastructure builder powering high-performance blockchain networks.
-
-We’re here to help scale decentralized ecosystems through reliable node operations, open-source contributions, and infrastructure automation.
-
----
-
-## 🛠️ Tech Stack
-
 <p align="center">
   <img src="https://img.shields.io/badge/-Go-00ADD8?logo=go&logoColor=white&style=flat"/>
   <img src="https://img.shields.io/badge/-Rust-000000?logo=rust&logoColor=white&style=flat"/>
@@ -40,38 +30,6 @@ We’re here to help scale decentralized ecosystems through reliable node operat
   <img src="https://img.shields.io/badge/-OVH%20Cloud-123F6D?style=flat"/>
   <img src="https://img.shields.io/badge/-Contabo-0098F0?style=flat"/>
 </p>
-
----
-
-## 🎯 Why Syvaira?
-
-✅ Independent — no VC, no custodial keys  
-✅ Secure setups — hardened SSH, strict firewall, key rotation  
-✅ Governance-active — voting & proposals across chains  
-✅ Reliable uptime — bare-metal + cloud redundancy
-
-We’re in it for the long run. Sustainable operations over hype.
-
----
-
-## 🤝 Let’s Collaborate
-
-Are you:
-
-- A protocol looking for reliable validators?  
-- A builder needing backend or infra automation?  
-- A DAO looking for node-side expertise?
-
-→ Reach out. We’d love to build with you.
-
----
-
-## 📫 Contact
-
-- 🌐 [syvaira.xyz](https://syvaira.xyz)  
-- 🐦 [@syvaira](https://twitter.com/syvaira)  
-- ✉️ [team@syvaira.xyz](mailto:team@syvaira.xyz)  
-- 🔐 [keybase.io/syvaira](https://keybase.io/syvaira)
 
 ---
 
