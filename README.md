@@ -1,86 +1,107 @@
 <p align="center">
-  <img src="1x1.png" alt="Syvaira Logo" width="200"/>
+  <img src="1x1.png" alt="Syvaira Logo" width="160"/>
 </p>
 
-<h1 align="center">Syvaira</h1>
+<h1 align="center">🚀 Syvaira</h1>
 
 <p align="center">
   <strong>Independent Node Validator & Web3 Infrastructure Builder</strong><br/>
-  Scalable • Secure • Sustainable
+  <em>Scalable • Secure • Sustainable</em>
+</p>
+
+<p align="center">
+  <a href="https://syvaira.xyz">🌐 Website</a> •
+  <a href="https://twitter.com/syvaira">🐦 Twitter</a> •
+  <a href="mailto:team@syvaira.xyz">📫 Contact</a> •
+  <a href="https://keybase.io/syvaira">🔒 Keybase</a>
 </p>
 
 ---
 
-## 🌐 About Syvaira
+## 🌐 About
 
-**Syvaira** is an independent node validator and Web3 infrastructure builder focused on creating **scalable**, **secure**, and **sustainable** blockchain systems.
+**Syvaira** is a fully independent validator and Web3 infrastructure builder committed to delivering scalable, secure, and sustainable blockchain infrastructure.
 
-We operate validator nodes on multiple networks, contribute to open ecosystems, and develop backend infrastructure to support decentralized technologies.
+We operate validator nodes, contribute to protocol governance, and develop open-source tooling to support decentralized ecosystems.
 
 ---
 
 ## 🔧 What We Do
 
 - 🛰️ **Validator Operations**  
-  High-availability and secure validator services on leading Proof-of-Stake networks.
+  Non-custodial, secure, and performant node operation with best-in-class uptime.
 
-- 🏗️ **Infrastructure Development**  
-  Tools and backend systems to support dApps, bridges, oracles, and other Web3 services.
+- 🏗️ **Web3 Infrastructure**  
+  Backend systems, DevOps tooling, and automation pipelines for protocol scalability.
 
-- 📣 **Governance Participation**  
-  Actively voting and engaging in governance proposals across supported chains.
-
----
-
-## 🌍 Networks We Validate
-
-We currently validate on the following networks:
-
-- ✅ Cosmos Hub (`cosmos`)
-- ✅ Osmosis (`osmosis`)
-- ✅ Celestia (`celestia`)
-- ✅ Sei Network (`sei`)
-- ✅ Juno (`juno`)
-- ✅ Archway (`archway`)
-- ✅ Nibiru (`nibiru`)
-
-> Visit our [website](https://syvaira.xyz) or check each network’s explorer to stake with Syvaira.
+- 📣 **Governance Engagement**  
+  Active participation in protocol proposals and community governance.
 
 ---
 
-## 🧰 Tech Stack
+## 🌍 Networks We Support
 
-- **Languages**: Go, Rust, TypeScript, Bash  
-- **DevOps**: Ansible, Docker, Terraform  
-- **Monitoring**: Prometheus, Grafana, Uptime Kuma  
-- **Infrastructure**: Hybrid setup (Bare-metal + Cloud: Hetzner, OVH, Contabo)  
-- **Security**: Hardened SSH, automated firewall management, secure key rotation
+We currently validate on:
+
+| Network        | Chain ID       |
+|----------------|----------------|
+| Cosmos Hub     | `cosmos`       |
+| Osmosis        | `osmosis`      |
+| Celestia       | `celestia`     |
+| Sei Network    | `sei`          |
+| Juno           | `juno`         |
+| Archway        | `archway`      |
+| Nibiru         | `nibiru`       |
+
+> 🪐 Delegate to Syvaira through each network's explorer or at [syvaira.xyz](https://syvaira.xyz).
+
+---
+
+## 🧰 Stack & Infrastructure
+
+<p align="center">
+  <img src="https://img.shields.io/badge/-Go-00ADD8?logo=go&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-Rust-000000?logo=rust&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white&style=for-the-badge"/>
+  <br/><br/>
+  <img src="https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-Ansible-EE0000?logo=ansible&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-Terraform-7B42BC?logo=terraform&logoColor=white&style=for-the-badge"/>
+  <br/><br/>
+  <img src="https://img.shields.io/badge/-Prometheus-E6522C?logo=prometheus&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-Grafana-F46800?logo=grafana&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-Uptime%20Kuma-222222?logo=monitoring&logoColor=white&style=for-the-badge"/>
+  <br/><br/>
+  <img src="https://img.shields.io/badge/-Hetzner-DC143C?logo=hetzner&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-OVH%20Cloud-123F6D?logo=ovh&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/-Contabo-0098F0?logo=server&logoColor=white&style=for-the-badge"/>
+</p>
 
 ---
 
 ## 💡 Our Vision
 
-To power decentralized technologies with resilient infrastructure that upholds:
+We’re not just spinning up servers — we’re laying the groundwork for a future built on decentralized principles.
 
-- **Scalability** — Ready for long-term growth  
-- **Security** — Infrastructure designed with defense in depth  
-- **Sustainability** — Responsible, efficient, and dependable operations
-
----
-
-## 🤝 Let's Collaborate
-
-We're open to partnerships, collaborations, and contributions.  
-Whether you're a network looking for reliable validators, or a builder needing infrastructure support — we're here to help.
+- 🔁 **Scalable** — Infrastructure built to evolve and grow  
+- 🔒 **Secure** — Hardened from the ground up  
+- 🌱 **Sustainable** — Reliable, low-maintenance, and cost-effective
 
 ---
 
-## 📬 Contact Us
+## 🤝 Work With Us
 
-- 🌐 Website: [https://syvaira.xyz](https://syvaira.xyz)
-- 🐦 Twitter: [@syvaira](https://twitter.com/syvaira)
-- 📫 Email: [team@syvaira.xyz](mailto:team@syvaira.xyz)
-- 🔒 Keybase: [`syvaira`](https://keybase.io/syvaira)
+Whether you're a protocol team, a DAO, or an open-source builder, we’d love to collaborate.
+
+---
+
+## 📬 Contact
+
+- 🌐 [syvaira.xyz](https://syvaira.xyz)  
+- 🐦 [@syvaira](https://twitter.com/syvaira)  
+- ✉️ [team@syvaira.xyz](mailto:team@syvaira.xyz)  
+- 🔒 [keybase.io/syvaira](https://keybase.io/syvaira)
 
 ---
 
