@@ -24,22 +24,6 @@ We’re here to help scale decentralized ecosystems through reliable node operat
 
 ---
 
-## 🌍 Networks We Support
-
-We currently validate on:
-
-- Cosmos Hub
-- Osmosis
-- Celestia
-- Sei Network
-- Juno
-- Archway
-- Nibiru
-
-> Stake with us via your favorite explorer or visit [syvaira.xyz](https://syvaira.xyz).
-
----
-
 ## 🛠️ Tech Stack
 
 <p align="center">
