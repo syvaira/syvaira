@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://syvaira.xyz/logo.png" alt="Syvaira Logo" width="200"/>
+  <img src="1x1.png" alt="Syvaira Logo" width="200"/>
 </p>
 
 <h1 align="center">Syvaira</h1>
