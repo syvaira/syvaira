@@ -46,7 +46,7 @@
                 <img src="assets/logo.png" alt="Syvaira Logo" class="h-8" />
                 <nav class="hidden md:flex gap-6 text-gray-300">
                     <a href="#" class="hover:text-white transition">Explorer</a>
-                    <a href="#network-section" class="hover:text-white transition"">Networks</a>
+                    <a onclick="document.getElementById('network').scrollIntoView({ behavior: 'smooth' })" class="hover:text-white transition"">Networks</a>
                     <a href="#" class="hover:text-white transition">Status</a>
                 </nav>
                 <div class="md:hidden">
@@ -64,7 +64,7 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden absolute top-full left-0 w-full flex-col md:hidden bg-surface rounded-xl">
                 <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Explorer</a>
-                <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Networks</a>
+                <a onclick="document.getElementById('network').scrollIntoView({ behavior: 'smooth' })" class="block py-2 text-gray-300 hover:text-white px-4">Networks</a>
                 <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Status</a>
             </div>
         </div>
@@ -80,13 +80,13 @@
             <p class="mt-4 text-gray-400 max-w-xl animate-fade-in-up delay-300">
                 Syvaira is an independent node validator committed to securing decentralized networks through scalable, reliable, and privacy-focused infrastructure.
             </p>
-            <button class="mt-6 bg-accent px-6 py-2 rounded-xl hover:bg-orange-500 transition font-semibold shadow-md animate-fade-in-up delay-500">
+            <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })" class="mt-6 bg-accent px-6 py-2 rounded-xl hover:bg-orange-500 transition font-semibold shadow-md animate-fade-in-up delay-500">
                 About Us
             </button>
         </section>
 
         <!-- About Section with Icons and Hover Animation -->
-<section class="text-center py-20 bg-background">
+<section id="about" class="text-center py-20 bg-background">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-4xl font-extrabold mb-12 leading-tight">
         What you need to know about <span class="text-primary">Us</span>
@@ -151,7 +151,7 @@
   
 
        <!-- Networks Section -->
-<section id="network-section" class="text-center py-16 px-4 sm:px-6">
+<section id="network" class="text-center py-16 px-4 sm:px-6">
     <h2 class="text-3xl font-extrabold mb-6">Networks</h2>
   
     <!-- Filter Buttons -->
