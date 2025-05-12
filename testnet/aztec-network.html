@@ -76,127 +76,100 @@
     <div class="max-w-screen-xl mx-auto px-6 relative z-10">
         
       
-  <section class="flex flex-col md:flex-row min-h-screen gap-8 p-4 md:p-8">
-    <main class="flex-1 p-4 md:p-8 bg-gray-800/70 rounded-lg shadow-lg space-y-12">
+ <section id="guides" class="min-h-screen py-20 bg-transparent text-white">
+  <div class="bg-transparent rounded-xl p-6 mt-8 scroll-mt-20 rounded-3xl p-8 transition-all duration-500 group ">
+     <div class=" flex justify-center">
+       <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 100 100.1" class="w-20 h-20 text-purple-400 animate-pulse">
+        <path fill="currentColor" fill-rule="evenodd" d="m60.2 4.2 35.6 35.6c5.6 5.6 5.6 14.7 0 20.3L60.2 95.9c-5.6 5.6-14.7 5.6-20.3 0L4.2 60.2c-5.6-5.6-5.6-14.7 0-20.3L39.9 4.2c5.6-5.6 14.7-5.6 20.3 0m-12.5 9-.1.1-34.2 34.2c-1.4 1.4-1.4 3.5-.1 4.9l.1.1 34.1 34.1c1.4 1.4 3.5 1.4 4.9.1l.1-.1 34.1-34.1c1.4-1.4 1.4-3.7 0-5.1l-34-34c-1.3-1.4-3.5-1.4-4.9-.2m3 15.1 21.1 21.1c.4.4.4.9 0 1.3L50.7 71.8c-.4.4-.9.4-1.3 0L28.3 50.7c-.4-.4-.4-.9 0-1.3l21.1-21.1c.4-.4.9-.4 1.3 0" clip-rule="evenodd"/>
+      </svg>
+    </div>
+  </div>
+  <div class="container max-w-screen-xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-8 text-center">Aztec Network</h2>
+    <p class="text-2xl font-bold mb-8 text-center">Guide to Running a Sequencer</p>
 
-      <section id="introduction">
-        <h2 class="text-3xl font-bold mb-4">Aztec Network Sequencer Node</h2>
-        <p>A step-by-step guide on how to run a <code class="bg-gray-800 text-white p-2 rounded-md overflow-auto max-w-full text-sm">Sequencer Node</code> on the Aztec Network Testnet.</p>
-      </section>
+    <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-12 text-center">
+  <a href="#requirements" class="bg-primary text-white py-2 px-4 rounded-xl hover:bg-primary/80 transition">Requirements</a>
+  <a href="#installation" class="bg-primary text-white py-2 px-4 rounded-xl hover:bg-primary/80 transition">Installation</a>
+  <a href="#run-node" class="bg-primary text-white py-2 px-4 rounded-xl hover:bg-primary/80 transition">Run Node</a>
+</div>
 
-      <section id="install-dependencies">
-        <h2 class="text-3xl font-bold mb-4">1. Install Dependencies</h2>
-        <p>Update and install required packages:</p>
-        <pre class="relative bg-gray-800 text-white p-4 rounded-md overflow-auto max-w-full text-sm">
-          <button class="copy-btn absolute top-2 right-2 z-10 bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition">Copy</button>
-<code class="whitespace-pre-wrap break-words">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y
 
-sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y</code>
-        </pre>
-      </section>
+    <section id="requirements" class="bg-transparent border border-white/20 rounded-xl p-6 shadow-md mt-8 scroll-mt-20">
+      <h3 class="text-2xl font-bold mb-4">System Requirements</h3>
+      <ul class="list-disc list-inside text-gray-300">
+        <li><strong>CPU:</strong> 8-core</li>
+        <li><strong>RAM:</strong> 16 GiB</li>
+        <li><strong>Storage:</strong> 1 TB SSD</li>
+        <li><strong>Internet Connection:</strong> Minimum 25 Mbps (upload and download)</li>
+      </ul>
+    </section>
 
-      <section id="install-docker">
-        <h2 class="text-3xl font-bold mb-4">2. Install Docker</h2>
-        <pre class="relative bg-gray-800 text-white p-4 rounded-md overflow-auto max-w-full text-sm">
-          <button class="copy-btn absolute top-2 right-2 z-10 bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition">Copy</button>
-<code class="whitespace-pre-wrap break-words">sudo apt update -y &amp;&amp; sudo apt upgrade -y
-for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+    <section id="installation" class="bg-transparent border border-white/20 rounded-xl p-6 shadow-md mt-8 scroll-mt-20">
+      <h3 class="text-2xl font-bold mb-4">Installation and Configuration</h3>
+      <ol class="list-decimal list-inside text-gray-300 space-y-4">
+        <li>Make sure Docker is installed on your system.</li>
+        <li>Run the following command to install the Aztec tool:
+          <div class="relative group">
+            <pre class="bg-accent/50 text-white rounded p-4 overflow-auto mt-2 text-sm"><code id="install-code">bash -i &lt;(curl -s https://install.aztec.network)</code></pre>
+            <div onclick="copyToClipboard('install-code')" class="absolute top-2 right-2 cursor-pointer opacity-0 group-hover:opacity-100 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white hover:text-primary" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M4 4a2 2 0 012-2h6a2 2 0 012 2v1h-1V4a1 1 0 00-1-1H6a1 1 0 00-1 1v10a1 1 0 001 1h1v1H6a2 2 0 01-2-2V4z" />
+                <path d="M9 7a2 2 0 012-2h4a2 2 0 012 2v10a2 2 0 01-2 2h-4a2 2 0 01-2-2V7zm2-1a1 1 0 00-1 1v10a1 1 0 001 1h4a1 1 0 001-1V7a1 1 0 00-1-1h-4z" />
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li>After installation, run the following command to set up the testnet version:
+          <div class="relative group">
+            <pre class="bg-accent/50 text-white rounded p-4 overflow-auto mt-2 text-sm"><code id="setup-code">aztec-up alpha-testnet</code></pre>
+            <div onclick="copyToClipboard('setup-code')" class="absolute top-2 right-2 cursor-pointer opacity-0 group-hover:opacity-100 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white hover:text-primary" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M4 4a2 2 0 012-2h6a2 2 0 012 2v1h-1V4a1 1 0 00-1-1H6a1 1 0 00-1 1v10a1 1 0 001 1h1v1H6a2 2 0 01-2-2V4z" />
+                <path d="M9 7a2 2 0 012-2h4a2 2 0 012 2v10a2 2 0 01-2 2h-4a2 2 0 01-2-2V7zm2-1a1 1 0 00-1 1v10a1 1 0 001 1h4a1 1 0 001-1V7a1 1 0 00-1-1h-4z" />
+              </svg>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-echo \
-"deb [arch=\$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-\$(. /etc/os-release &amp;&amp; echo \$VERSION_CODENAME) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
-
-sudo apt update -y &amp;&amp; sudo apt upgrade -y
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-sudo docker run hello-world
-sudo systemctl enable docker
-sudo systemctl restart docker</code>
-        </pre>
-      </section>
-
-      <section id="install-Aztec">
-        <h2 class="text-3xl font-bold mb-4">3. Install Aztec Tools</h2>
-        <pre class="relative bg-gray-800 text-white p-4 rounded-md overflow-auto max-w-full text-sm">
-          <button class="copy-btn absolute top-2 right-2 z-10 bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition">Copy</button>
-<code class="whitespace-pre-wrap break-words">bash -i <(curl -s https://install.aztec.network)
-
-echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
-
-source ~/.bashrc
-
-aztec-up alpha-testnet</code>
-        </pre>
-      </section>
-
-      <section id="Enable-Firewall">
-        <h2 class="text-3xl font-bold mb-4">4. Enable Firewall & Open Ports</h2>
-        <pre class="relative bg-gray-800 text-white p-4 rounded-md overflow-auto max-w-full text-sm">
-          <button class="copy-btn absolute top-2 right-2 z-10 bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition">Copy</button>
-<code class="whitespace-pre-wrap break-words"># Firewall
-ufw allow 22
-ufw allow ssh
-ufw enable
-
-# Sequencer
-ufw allow 40400
-ufw allow 8080</code>
-        </pre>
-      </section>
-      
-      <section id="Sequencer">
-        <h2 class="text-3xl font-bold mb-4">5. Run Sequencer Node</h2>
-        <p>Open Screen</p>
-        <pre class="relative bg-gray-800 text-white p-4 rounded-md overflow-auto max-w-full text-sm">
-          <button class="copy-btn absolute top-2 right-2 z-10 bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition">Copy</button>
-<code class="whitespace-pre-wrap break-words">screen -S aztec</code>
-        </pre>
-        <p>Run Node</p>
-        <pre class="relative bg-gray-800 text-white p-4 rounded-md overflow-auto max-w-full text-sm">
-          <button class="copy-btn absolute top-2 right-2 z-10 bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition">Copy</button>
-<code class="whitespace-pre-wrap break-words">aztec start --node --archiver --sequencer \
+    <section id="run-node" class="bg-transparent border border-white/20 rounded-xl p-6 shadow-md mt-8 scroll-mt-20">
+      <h3 class="text-2xl font-bold mb-4">Running a Sequencer Node</h3>
+      <p class="text-gray-300 mb-4">After installation, run the following command:</p>
+      <div class="relative group">
+        <pre class="bg-accent/50 text-white rounded p-4 overflow-auto mb-4 text-sm"><code id="run-node-code">aztec start --node --archiver --sequencer \
   --network alpha-testnet \
-  --l1-rpc-urls RPC_URL  \
-  --l1-consensus-host-urls BEACON_URL \
-  --sequencer.validatorPrivateKey 0xYourPrivateKey \
-  --sequencer.coinbase 0xYourAddress \
-  --p2p.p2pIp IP
-  --p2p.maxTxPoolSize 1000000000</code>
-        </pre>
-      </section>
-
-      <!-- Tambahkan bagian lainnya seperti Setup Aztec, RPC, Firewall, dll sesuai struktur -->
-
-    </main>
-  </section>
+  --l1-rpc-urls &lt;ETHEREUM_HOSTS&gt; \
+  --l1-consensus-host-urls &lt;L1_CONSENSUS_HOST_URLS&gt; \
+  --sequencer.validatorPrivateKey &lt;VALIDATOR_PRIVATE_KEY&gt; \
+  --sequencer.coinbase &lt;COINBASE&gt; \
+  --p2p.p2pIp &lt;P2P_IP&gt;</code></pre>
+        <div onclick="copyToClipboard('run-node-code')" class="absolute top-2 right-2 cursor-pointer opacity-0 group-hover:opacity-100 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white hover:text-primary" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M4 4a2 2 0 012-2h6a2 2 0 012 2v1h-1V4a1 1 0 00-1-1H6a1 1 0 00-1 1v10a1 1 0 001 1h1v1H6a2 2 0 01-2-2V4z" />
+            <path d="M9 7a2 2 0 012-2h4a2 2 0 012 2v10a2 2 0 01-2 2h-4a2 2 0 01-2-2V7zm2-1a1 1 0 00-1 1v10a1 1 0 001 1h4a1 1 0 001-1V7a1 1 0 00-1-1h-4z" />
+          </svg>
+        </div>
+      </div>
+      <p class="text-gray-300">Replace the following parameters based on your configuration:</p>
+      <ul class="list-disc list-inside text-gray-300 mt-2">
+        <li><code class="bg-primary/80">&lt;ETHEREUM_HOSTS&gt;</code>: Public Ethereum Sepolia RPC URLs</li>
+        <li><code class="bg-primary/80">&lt;L1_CONSENSUS_HOST_URLS&gt;</code>: Ethereum Sepolia consensus RPC URLs</li>
+        <li><code class="bg-primary/80">&lt;VALIDATOR_PRIVATE_KEY&gt;</code>: Your Ethereum account's private key</li>
+        <li><code class="bg-primary/80">&lt;COINBASE&gt;</code>: Ethereum address to receive block rewards</li>
+        <li><code class="bg-primary/80">&lt;P2P_IP&gt;</code>: Public IP address of your node</li>
+      </ul>
+    </section>
+  </div>
 
   <script>
-    document.querySelectorAll('.copy-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        const code = button.parentElement.querySelector('code');
-        navigator.clipboard.writeText(code.innerText).then(() => {
-          button.innerText = 'Copied!';
-          button.classList.remove('bg-blue-600');
-          button.classList.add('bg-green-600');
-          setTimeout(() => {
-            button.innerText = 'Copy';
-            button.classList.remove('bg-green-600');
-            button.classList.add('bg-blue-600');
-          }, 2000);
-        }).catch(err => {
-          console.error('Copy failed', err);
-          button.innerText = 'Error';
-        });
-      });
-    });
+    function copyToClipboard(id) {
+      const el = document.getElementById(id);
+      navigator.clipboard.writeText(el.textContent);
+    }
   </script>
-
+</section>
 
 
         <!-- Footer -->
