@@ -72,149 +72,107 @@
 
     <!-- Hero Section -->
     <div class="max-w-screen-xl mx-auto px-6 relative z-10">
-        <section class="w-full h-screen flex flex-col justify-center items-center text-center px-6 bg-transparent">
-            <a href="index.html">
-            <img src="assets/logo.png" alt="Syvaira Logo" class="h-20 mb-6 animate-fade-in-up delay-100" />
-            </a>
-            <h1 class="text-4xl md:text-6xl font-extrabold animate-fade-in-up delay-200">
-                Hi! I'm <span class="text-primary">Syvaira</span>
-            </h1>
-            <p class="mt-4 text-gray-400 max-w-xl animate-fade-in-up delay-300">
-                Syvaira is an independent node validator committed to securing decentralized networks through scalable, reliable, and privacy-focused infrastructure.
-            </p>
-            <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })" class="mt-6 bg-accent px-6 py-2 rounded-xl hover:bg-orange-500 transition font-semibold shadow-md animate-fade-in-up delay-500">
-                About Us
-            </button>
-        </section>
+        <section class="w-full h-screen flex flex-col justify-center items-center text-center px-6 bg-transparent text-white">
+  <img src="assets/logo.png" alt="Syvaira Logo" class="h-20 mb-6 animate-fade-in-up delay-100" />
+
+  <h1 class="text-4xl md:text-6xl font-extrabold leading-tight animate-fade-in-up delay-200">
+    Hi! I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Syvaira</span>
+  </h1>
+
+  <p class="mt-4 text-gray-400 max-w-xl text-lg md:text-xl animate-fade-in-up delay-300">
+    Syvaira is an independent node validator committed to securing decentralized networks through scalable, reliable, and privacy-focused infrastructure.
+  </p>
+
+  <button
+  onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
+  class=" border border-white/20 shadow-md hover:shadow-lg hover:shadow-accent/20 mt-6 bg-primary text-white px-6 py-3 rounded-2xl hover:bg-accent/80 transition-all duration-300 font-semibold shadow-lg animate-fade-in-up delay-500"
+>
+  About Us
+</button>
+
+</section>
 
         <!-- About Section with Icons and Hover Animation -->
-        <section id="about" class="w-full min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-transparent">
+        <section id="about" class="w-full min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-transparent text-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-16 leading-tight tracking-tight">
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">About Us</span>
+    </h2>
 
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-4xl font-extrabold mb-12 leading-tight">
-        What you need to know about <span class="text-primary">Us</span>
-      </h2>
-      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        
-        <!-- Card 1 -->
-        <div class="bg-surface rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-          <div class="mb-4 flex justify-center">
-            <svg class="w-10 h-10 text-primary group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 11c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm0 0c0 1.105.895 2 2 2s2-.895 2-2-.895-2-2-2-2 .895-2 2zm-2 3h4a4 4 0 014 4v1H6v-1a4 4 0 014-4z" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold mb-2 text-foreground">Blockchain Infrastructure</h3>
-          <p class="text-muted-foreground text-sm">Scalable, secure, and privacy-centric infra for performance and uptime.</p>
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      
+      <!-- Card Template -->
+<div class="bg-surface border border-white/20 rounded-2xl p-6 shadow-md hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 transform hover:-translate-y-2 group">
+        <div class="mb-4 flex justify-center">
+          <svg class="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm0 0c0 1.105.895 2 2 2s2-.895 2-2-.895-2-2-2-2 .895-2 2zm-2 3h4a4 4 0 014 4v1H6v-1a4 4 0 014-4z"/>
+          </svg>
         </div>
-  
-        <!-- Card 2 -->
-        <div class="bg-surface rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-          <div class="mb-4 flex justify-center">
-            <svg class="w-10 h-10 text-primary group-hover:rotate-6 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M3 3v18h18V3H3zm3 3h12v12H6V6z" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold mb-2 text-foreground">Multi-chain Explorer</h3>
-          <p class="text-muted-foreground text-sm">Cross-chain insights to explore and interact with blockchain ecosystems.</p>
+        <h3 class="text-xl font-semibold mb-2 text-white">Blockchain Infrastructure</h3>
+        <p class="text-sm text-gray-400">Scalable, secure, and privacy-centric infra for performance and uptime.</p>
+      </div>
+
+<div class="bg-surface border border-white/20 rounded-2xl p-6 shadow-md hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 transform hover:-translate-y-2 group">
+        <div class="mb-4 flex justify-center">
+          <svg class="w-10 h-10 text-primary group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18V3H3zm3 3h12v12H6V6z"/>
+          </svg>
         </div>
-  
-        <!-- Card 3 -->
-        <div class="bg-surface rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-          <div class="mb-4 flex justify-center">
-            <svg class="w-10 h-10 text-primary group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M8 16h8M8 12h8m-8-4h8M4 6h16M4 10h16M4 14h16M4 18h16" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold mb-2 text-foreground">Validator Resources</h3>
-          <p class="text-muted-foreground text-sm">Step-by-step guidance for new operators in the validator ecosystem.</p>
+        <h3 class="text-xl font-semibold mb-2 text-white">Multi-chain Explorer</h3>
+        <p class="text-sm text-gray-400">Cross-chain insights to explore and interact with blockchain ecosystems.</p>
+      </div>
+
+<div class="bg-surface border border-white/20 rounded-2xl p-6 shadow-md hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 transform hover:-translate-y-2 group">
+        <div class="mb-4 flex justify-center">
+          <svg class="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 16h8M8 12h8m-8-4h8M4 6h16M4 10h16M4 14h16M4 18h16"/>
+          </svg>
         </div>
-  
-        <!-- Card 4 -->
-        <div class="bg-surface rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-          <div class="mb-4 flex justify-center">
-            <svg class="w-10 h-10 text-primary group-hover:rotate-3 transition-transform" fill="none" stroke="currentColor" stroke-width="1.5"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold mb-2 text-foreground">Governance & Compliance</h3>
-          <p class="text-muted-foreground text-sm">Decentralized governance and ecosystem integrity through best practices.</p>
+        <h3 class="text-xl font-semibold mb-2 text-white">Validator Resources</h3>
+        <p class="text-sm text-gray-400">Step-by-step guidance for new operators in the validator ecosystem.</p>
+      </div>
+
+<div class="bg-surface border border-white/20 rounded-2xl p-6 shadow-md hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 transform hover:-translate-y-2 group">
+        <div class="mb-4 flex justify-center">
+          <svg class="w-10 h-10 text-primary group-hover:rotate-3 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
         </div>
-  
+        <h3 class="text-xl font-semibold mb-2 text-white">Governance & Compliance</h3>
+        <p class="text-sm text-gray-400">Decentralized governance and ecosystem integrity through best practices.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   
 
        <!-- Networks Section -->
-<section id="network" class="w-full min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-transparent">
-    <h2 class="text-3xl font-extrabold mb-6">Networks</h2>
-  
-    <!-- Filter Buttons -->
-    <div class="mb-8 flex flex-wrap justify-center gap-3">
-      <button id="mainnet-btn" class="px-4 py-1 rounded-lg bg-primary text-white transition-colors">Mainnet</button>
-      <button id="testnet-btn" class="px-4 py-1 rounded-lg bg-surface text-white transition-colors">Testnet</button>
+<section id="network" class="w-full min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-transparent text-white">
+  <h2 class="text-4xl md:text-5xl font-extrabold mb-12 tracking-tight relative inline-block">
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Networks</span>
+  </h2>
+
+<div class="bg-surface border border-white/20 rounded-3xl p-8 hover:shadow-lg hover:shadow-accent/30 transition-all duration-500 transform hover:-translate-y-2 group max-w-md w-full">
+    <div class="mb-6 flex justify-center">
+       <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 100 100.1" class="w-16 h-16 text-purple-400 animate-pulse">
+        <path fill="currentColor" fill-rule="evenodd" d="m60.2 4.2 35.6 35.6c5.6 5.6 5.6 14.7 0 20.3L60.2 95.9c-5.6 5.6-14.7 5.6-20.3 0L4.2 60.2c-5.6-5.6-5.6-14.7 0-20.3L39.9 4.2c5.6-5.6 14.7-5.6 20.3 0m-12.5 9-.1.1-34.2 34.2c-1.4 1.4-1.4 3.5-.1 4.9l.1.1 34.1 34.1c1.4 1.4 3.5 1.4 4.9.1l.1-.1 34.1-34.1c1.4-1.4 1.4-3.7 0-5.1l-34-34c-1.3-1.4-3.5-1.4-4.9-.2m3 15.1 21.1 21.1c.4.4.4.9 0 1.3L50.7 71.8c-.4.4-.9.4-1.3 0L28.3 50.7c-.4-.4-.4-.9 0-1.3l21.1-21.1c.4-.4.9-.4 1.3 0" clip-rule="evenodd"/>
+      </svg>
     </div>
-  
-    <!-- Network List -->
-    <div id="network-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-6 max-w-screen-xl mx-auto">
-      
-      <!-- Mainnet Items -->
-      <div class="network-item mainnet fade-on-scroll bg-surface rounded-xl p-4 hover:scale-105 transition-opacity duration-700 ease-in-out opacity-0 hidden">
-        <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">        
-        <img src="assets/logo.png" alt="ExampleNet" class="h-8 mx-auto mb-2" />
-        </div>
-        <p class="font-bold">ExampleNet</p>
-        <div class="mt-2 flex justify-center gap-2 flex-wrap">
-          <button class="bg-primary px-3 py-1 rounded text-sm">Explorer</button>
-          <button class="bg-gray-700 px-3 py-1 rounded text-sm">Service</button>
-        </div>
-      </div>
-  
-      <div class="network-item mainnet fade-on-scroll bg-surface rounded-xl p-4 hover:scale-105 transition-opacity duration-700 ease-in-out opacity-0 hidden">
-        <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">        
-        <img src="assets/logo.png" alt="ChainSphere" class="h-8 mx-auto mb-2" />
-        </div>
-        <p class="font-bold">ChainSphere</p>
-        <div class="mt-2 flex justify-center gap-2 flex-wrap">
-          <button class="bg-primary px-3 py-1 rounded text-sm">Explorer</button>
-          <button class="bg-gray-700 px-3 py-1 rounded text-sm">Service</button>
-        </div>
-      </div>
-  
-      <!-- Testnet Items -->
-      <div class="network-item testnet fade-on-scroll bg-surface rounded-xl p-4 hover:scale-105 transition-opacity duration-700 ease-in-out opacity-0 hidden">
-        <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">        
-          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 100 100.1" class="breadcrumbHomeIcon_xK9p">
-            <path fill="#7762C7" fill-rule="evenodd" d="m60.2 4.2 35.6 35.6c5.6 5.6 5.6 14.7 0 20.3L60.2 95.9c-5.6 5.6-14.7 5.6-20.3 0L4.2 60.2c-5.6-5.6-5.6-14.7 0-20.3L39.9 4.2c5.6-5.6 14.7-5.6 20.3 0m-12.5 9-.1.1-34.2 34.2c-1.4 1.4-1.4 3.5-.1 4.9l.1.1 34.1 34.1c1.4 1.4 3.5 1.4 4.9.1l.1-.1 34.1-34.1c1.4-1.4 1.4-3.7 0-5.1l-34-34c-1.3-1.4-3.5-1.4-4.9-.2m3 15.1 21.1 21.1c.4.4.4.9 0 1.3L50.7 71.8c-.4.4-.9.4-1.3 0L28.3 50.7c-.4-.4-.4-.9 0-1.3l21.1-21.1c.4-.4.9-.4 1.3 0" clip-rule="evenodd"/>
-          </svg>
-        </div>
-        <p class="font-bold">Aztec Network</p>
-        <div class="mt-2 flex justify-center gap-2 flex-wrap">
-          <button class="bg-primary px-3 py-1 rounded text-sm">Explorer</button>
-          <a href="testnet/aztec-network.html" class="bg-gray-700 px-3 py-1 rounded text-sm inline-block">Service</a>
-        </div>
-      </div>
-  
-      <div class="network-item testnet fade-on-scroll bg-surface rounded-xl p-4 hover:scale-105 transition-opacity duration-700 ease-in-out opacity-0 hidden">
-        <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">        
-        <img src="assets/logo.png" alt="ChainSphere Testnet" class="h-8 mx-auto mb-2" />
-        </div>
-        <p class="font-bold">ChainSphere Testnet</p>
-        <div class="mt-2 flex justify-center gap-2 flex-wrap">
-          <button class="bg-primary px-3 py-1 rounded text-sm">Explorer</button>
-          <button class="bg-gray-700 px-3 py-1 rounded text-sm">Service</button>
-        </div>
-      </div>
+    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-purple-400 transition duration-300">Aztec Network</h3>
+    <div class="mt-4 flex justify-center gap-4 flex-wrap">
+      <a href="https://aztecscan.xyz/" target="_blank" class="bg-accent hover:bg-accent/80 transition text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:shadow-lg">
+  Explorer
+</a>
+<a href="testnet/aztec-network.html" class="bg-primary hover:bg-primary/80 transition text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:shadow-lg">
+  Service
+</a>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
   
   
 
@@ -225,7 +183,7 @@
       
       <!-- Brand -->
       <div>
-        <h2 class="text-white text-xl font-semibold mb-2">Syvaira</h2>
+        <h2 class="text-white text-xl font-semibold mb-2"><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Syvaira</span></h2>
         <p class="text-sm">Committed to Securing Decentralized Networks.</p>
       </div>
   
