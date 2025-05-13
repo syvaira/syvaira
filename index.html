@@ -65,7 +65,8 @@
                 <img src="assets/logo.png" alt="Syvaira Logo" class="h-8" />
                 <nav class="hidden md:flex gap-6 text-gray-300">
                     <a href="#" class="hover:text-white transition">Explorer</a>
-                    <a href="networks/index.html" class="hover:text-white transition"">Networks</a>
+                    <a onclick="document.getElementById('network').scrollIntoView({ behavior: 'smooth' })" class="hover:text-white transition"">Networks</a>
+                    <a href="#" class="hover:text-white transition">Services</a>
                     <a href="#" class="hover:text-white transition">Status</a>
                 </nav>
                 <div class="md:hidden">
@@ -84,6 +85,7 @@
             <div id="mobile-menu" class="hidden absolute top-full left-0 w-full flex-col md:hidden bg-surface rounded-xl">
                 <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Explorer</a>
                 <a onclick="document.getElementById('network').scrollIntoView({ behavior: 'smooth' })" class="block py-2 text-gray-300 hover:text-white px-4">Networks</a>
+                <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Services</a>
                 <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Status</a>
             </div>
         </div>
