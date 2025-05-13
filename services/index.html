@@ -5,12 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="Syvaira is an independent node validator dedicated to secure, scalable, and privacy-focused infrastructure in decentralized blockchain networks.">
-    <meta name="keywords" content="Syvaira, blockchain validator, decentralized infrastructure, node operator, crypto network, Aztec Network, validator resources">
+    <meta name="description"
+        content="Syvaira is an independent node validator dedicated to secure, scalable, and privacy-focused infrastructure in decentralized blockchain networks.">
+    <meta name="keywords"
+        content="Syvaira, blockchain validator, decentralized infrastructure, node operator, crypto network, Aztec Network, validator resources">
     <meta name="author" content="Syvaira">
 
     <meta property="og:title" content="Syvaira - Securing Decentralized Networks">
-    <meta property="og:description" content="Independent validator focused on scalable, secure, and privacy-centric blockchain infrastructure.">
+    <meta property="og:description"
+        content="Independent validator focused on scalable, secure, and privacy-centric blockchain infrastructure.">
     <meta property="og:image" content="https://syvaira.pages.dev/assets/logo.png">
     <meta property="og:url" content="https://syvaira.pages.dev/">
     <meta property="og:type" content="website">
@@ -19,7 +22,7 @@
     <meta name="twitter:title" content="Syvaira - Blockchain Infrastructure & Validator Resources">
     <meta name="twitter:description" content="Explore our tools and validator services across multi-chain networks.">
     <meta name="twitter:image" content="https://syvaira.pages.dev/assets/logo.png">
-    
+
     <title>Services - Syvaira</title>
 
     <!-- Favicon & Fonts -->
@@ -51,130 +54,166 @@
 </head>
 
 <main>
-<body class="relative bg-background text-white font-inter">
-    <!-- Particle Background -->
-    <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
+    <body class="relative bg-background text-white font-inter">
+        <!-- Particle Background -->
+        <div id="particles-js" class="absolute inset-0 -z-10"></div>
 
 
-    <!-- Navigation -->
-    <div class="sticky top-0 z-50   mt-0 max-w-screen-xl mx-auto px-6 relative">
-        <div class="relative">
-            <header class="flex bg-surface rounded-xl items-center justify-between py-4 px-6 shadow-md">
-                <a href="../index.html">
-                <img src="../assets/logo.png" alt="Syvaira Logo" class="h-8" />
-                </a>
-                
-                <nav class="hidden md:flex gap-6 text-gray-300">
-                    <a href="#" class="hover:text-white transition">Explorer</a>
-                    <a onclick="document.getElementById('network').scrollIntoView({ behavior: 'smooth' })" class="hover:text-white transition"">Networks</a>
-                    <a href="#" class="hover:text-white transition">Status</a>
-                </nav>
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="focus:outline-none">
-                        <svg id="menu-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                            <line x1="3" y1="6" x2="21" y2="6" />
-                            <line x1="3" y1="12" x2="21" y2="12" />
-                            <line x1="3" y1="18" x2="21" y2="18" />
-                        </svg>
-                    </button>
+        <!-- Navigation -->
+        <div class="sticky top-0 z-50   mt-0 max-w-screen-xl mx-auto px-6 relative">
+            <div class="relative">
+                <header class="flex bg-surface rounded-xl items-center justify-between py-4 px-6 shadow-md">
+                    <a href="../index.html" aria-label="Syvaira">
+                        <img src="../assets/logo.png" alt="Syvaira Logo" class="h-8" />
+                    </a>
+
+                    <nav class="hidden md:flex gap-6 text-gray-300">
+                        <a href="#" class="hover:text-white transition">Explorer</a>
+                        <a onclick="document.getElementById('network').scrollIntoView({ behavior: 'smooth' })"
+                            class="hover:text-white transition"">Networks</a>
+                    <a href=" #" class="hover:text-white transition">Status</a>
+                    </nav>
+                    <div class="md:hidden">
+                        <button id="menu-toggle" class="focus:outline-none">
+                            <svg id="menu-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <line x1="3" y1="6" x2="21" y2="6" />
+                                <line x1="3" y1="12" x2="21" y2="12" />
+                                <line x1="3" y1="18" x2="21" y2="18" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu"
+                    class="hidden absolute top-full left-0 w-full flex-col md:hidden bg-surface rounded-xl">
+                    <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Explorer</a>
+                    <a onclick="document.getElementById('network').scrollIntoView({ behavior: 'smooth' })"
+                        class="block py-2 text-gray-300 hover:text-white px-4">Networks</a>
+                    <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Status</a>
                 </div>
-            </header>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden absolute top-full left-0 w-full flex-col md:hidden bg-surface rounded-xl">
-                <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Explorer</a>
-                <a onclick="document.getElementById('network').scrollIntoView({ behavior: 'smooth' })" class="block py-2 text-gray-300 hover:text-white px-4">Networks</a>
-                <a href="#" class="block py-2 text-gray-300 hover:text-white px-4">Status</a>
             </div>
         </div>
-    </div>
 
-    <!-- Hero Section -->
-    <div class="max-w-screen-xl mx-auto px-6 relative z-10">
-       
-
-       <!-- Services Section -->
-<section id="services" class="w-full min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-transparent text-white">
-  <h2 class="text-4xl md:text-5xl font-extrabold mb-12 tracking-tight relative inline-block">
-    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Services</span>
-  </h2>
-
-<div class="bg-surface border border-white/20 rounded-3xl p-8 hover:shadow-lg hover:shadow-accent/30 transition-all duration-500 transform hover:-translate-y-2 group max-w-md w-full">
-    <div class="mb-6 flex justify-center">
-       <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 100 100.1" class="w-16 h-16 text-purple-400 animate-pulse">
-        <path fill="currentColor" fill-rule="evenodd" d="m60.2 4.2 35.6 35.6c5.6 5.6 5.6 14.7 0 20.3L60.2 95.9c-5.6 5.6-14.7 5.6-20.3 0L4.2 60.2c-5.6-5.6-5.6-14.7 0-20.3L39.9 4.2c5.6-5.6 14.7-5.6 20.3 0m-12.5 9-.1.1-34.2 34.2c-1.4 1.4-1.4 3.5-.1 4.9l.1.1 34.1 34.1c1.4 1.4 3.5 1.4 4.9.1l.1-.1 34.1-34.1c1.4-1.4 1.4-3.7 0-5.1l-34-34c-1.3-1.4-3.5-1.4-4.9-.2m3 15.1 21.1 21.1c.4.4.4.9 0 1.3L50.7 71.8c-.4.4-.9.4-1.3 0L28.3 50.7c-.4-.4-.4-.9 0-1.3l21.1-21.1c.4-.4.9-.4 1.3 0" clip-rule="evenodd"/>
-      </svg>
-    </div>
-    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-purple-400 transition duration-300">Aztec Network</h3>
-    <div class="mt-4 flex justify-center gap-4 flex-wrap">
-      <a href="https://aztecscan.xyz/" target="_blank" class="bg-accent hover:bg-accent/80 transition text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:shadow-lg">
-  Explorer
-</a>
-<a href="testnet/aztec.html" class="bg-primary hover:bg-primary/80 transition text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:shadow-lg">
-  Service
-</a>
-
-    </div>
-  </div>
-</section>
+        <!-- Hero Section -->
+        <div class="max-w-screen-xl mx-auto px-6 relative z-10">
 
 
-  
-  
+            <!-- Services Section -->
+            <section id="services"
+                class="w-full min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-transparent text-white">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight relative inline-block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Services</span>
+                </h2>
+                <p class="max-w-2xl text-gray-300 mb-12 text-lg">
+                    Discover our active validator roles and tools powering decentralized networks. We support
+                    privacy-first and scalable blockchain ecosystems.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+                    <!-- Aztec Service Card -->
+                    <div
+                        class="bg-surface border border-white/20 rounded-3xl p-8 hover:shadow-lg hover:shadow-accent/30 transition-all duration-500 transform hover:-translate-y-2 group">
+                        <div class="mb-6 flex justify-center">
+                            <img src="../assets/aztec-network.png" />
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-accent transition duration-300">
+                            Aztec</h3>
+                        <div class="mt-4 flex justify-center gap-4 flex-wrap">
+                            <a href="https://aztecscan.xyz/" target="_blank" aria-label="Aztec Explorer"
+                                class="border border-white hover:bg-primary hover:text-white transition px-4 py-2 rounded-lg text-sm font-medium">
+                                Explorer
+                            </a>
+                            <a href="testnet/aztec.html" aria-label="Aztec Service"
+                                class="border border-white hover:bg-primary hover:text-white transition px-4 py-2 rounded-lg text-sm font-medium">
+                                Service
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Coming Soon Card -->
+                    <div class="bg-surface border border-dashed border-gray-600 rounded-3xl p-8 opacity-60">
+                        <div class="mb-6 flex justify-center">
+                            <svg class="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path d="M12 6v6l4 2" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Coming Soon</h3>
+                        <p class="text-sm text-gray-400">Stay tuned for our next network integration.</p>
+                    </div>
+                </div>
+            </section>
 
 
-        <!-- Footer -->
-<footer class="bg-surface rounded-xl mt-10 max-w-screen-xl mx-auto px-6 py-10 text-gray-300 shadow-md">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-      
-      <!-- Brand -->
-      <div>
-        <h2 class="text-white text-xl font-semibold mb-2"><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Syvaira</span></h2>
-        <p class="text-sm">Committed to Securing Decentralized Networks.</p>
-      </div>
-  
-      <!-- Quick Links -->
-      <div>
-        <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
-        <ul class="space-y-1 text-sm">
-          <li><a href="#about" class="hover:text-white transition">About</a></li>
-          <li><a href="#features" class="hover:text-white transition">Features</a></li>
-          <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
-          <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
-        </ul>
-      </div>
-  
-      <!-- Social Media -->
-      <div>
-        <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
-        <div class="flex justify-center md:justify-start space-x-4 mt-2">
-          <a href="https://twitter.com/syvaira" target="_blank" class="hover:text-white" aria-label="Twitter">
-            <!-- Twitter icon -->
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.46 6c-.77.35-1.6.59-2.46.69a4.3 4.3 0 001.88-2.38 8.63 8.63 0 01-2.73 1.04 4.29 4.29 0 00-7.31 3.9A12.18 12.18 0 013 4.89a4.28 4.28 0 001.33 5.72 4.24 4.24 0 01-1.94-.54v.06a4.29 4.29 0 003.44 4.2 4.26 4.26 0 01-1.93.07 4.29 4.29 0 004.01 2.98A8.6 8.6 0 012 19.54a12.14 12.14 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2v-.56A8.72 8.72 0 0024 5.5a8.52 8.52 0 01-2.54.7z"/>
-            </svg>
-          </a>
-          <a href="https://github.com/syvaira" target="_blank" class="hover:text-white" aria-label="GitHub">
-            <!-- GitHub icon -->
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.37 0 0 5.38 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.16c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.75.08-.73.08-.73 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1 .11-.78.42-1.32.76-1.62-2.66-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.25-3.22-.13-.31-.54-1.55.12-3.23 0 0 1.01-.32 3.3 1.23a11.44 11.44 0 016 0c2.28-1.55 3.3-1.23 3.3-1.23.66 1.68.25 2.92.12 3.23.78.84 1.25 1.91 1.25 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.3c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.62-5.38-12-12-12z"/>
-            </svg>
-          </a>
+
+
+
+
+
+            <!-- Footer -->
+            <footer class="bg-surface rounded-xl mt-10 max-w-screen-xl mx-auto px-6 py-10 text-gray-300 shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+                    <!-- Brand -->
+                    <div>
+                        <a href="https://syvaira.pages.dev" aria-label="Syvaira"
+                            class="text-white text-xl font-semibold mb-2"><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Syvaira</span></a>
+                        <p class="text-sm">Committed to Securing Decentralized Networks.</p>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
+                        <div class="flex justify-center md:justify-start space-x-4 mt-2">
+                            <!-- Twitter (X) -->
+                            <a href="https://twitter.com/syvaira" target="_blank" class="hover:text-primary"
+                                aria-label="X (Twitter)">
+                                <!-- X icon -->
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.525 3H21l-7.294 8.336L22 21h-6.304l-4.938-6.026L5.4 21H2l7.807-8.914L2 3h6.407l4.535 5.447L17.525 3z" />
+                                </svg>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com/syvaira" target="_blank" class="hover:text-primary"
+                                aria-label="GitHub">
+                                <!-- GitHub icon -->
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.16c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.75.08-.73.08-.73 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1 .11-.78.42-1.32.76-1.62-2.66-.3-5.47-1.34-5.47-5.95a5.25 5.25 0 011.25-3.22c-.13-.31-.54-1.55.12-3.23 0 0 1.01-.32 3.3 1.23a11.44 11.44 0 016 0c2.28-1.55 3.3-1.23 3.3-1.23.66 1.68.25 2.92.12 3.23a5.25 5.25 0 011.25 3.22c0 4.61-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.3c0 .32.21.7.82.58A12 12 0 0012 0z" />
+                                </svg>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:syvairaa@gmail.com" target="_blank" class="hover:text-primary"
+                                aria-label="Email">
+                                <!-- Envelope icon -->
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2zm8 7L4.5 6h15L12 11zm0 2l7.5-5H4.5L12 13z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center text-xs border-t border-gray-700 pt-4">
+                    <p>&copy; 2025 Syvaira. All rights reserved.</p>
+                </div>
+            </footer>
+
+
         </div>
-      </div>
-    </div>
-  
-    <div class="mt-8 text-center text-xs border-t border-gray-700 pt-4">
-      <p>&copy; 2025 Syvaira. All rights reserved.</p>
-    </div>
-  </footer>
-  
-  
-    </div>
 
-    <!-- Scripts -->
-    <script src="../script.js"></script>
-</body>
+        <!-- Scripts -->
+        <script src="../script.js"></script>
+    </body>
 </main>
+
 </html>
