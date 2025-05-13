@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://syvaira.pages.dev">🌐 Website</a> •
   <a href="https://twitter.com/syvaira">🐦 Twitter</a> •
-  <a href="mailto:syvairaa@gmail.com">📫 Email</a> •
+  <a href="mailto:syvairaa@gmail.com">📫 Email</a>
 </p>
 
 ---
