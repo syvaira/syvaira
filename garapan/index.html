@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garapan Saya</title>
+
+    <!-- Favicon & Fonts -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4177c2',
+                        accent: '#f48142',
+                        background: '#0f172a',
+                        surface: '#1e293b'
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+
+<body class="relative bg-background text-white font-inter min-h-screen">
+    <div class="max-w-screen-xl mx-auto px-6 py-0">
+        <div class="max-w-screen-xl mx-auto px-0 py-6 flex items-center justify-between">
+        <select id="typeFilter" class="p-3 bg-primary text-white rounded-md transition duration-300 focus:ring-2 focus:ring-blue-400">
+            <option value="">All</option>
+            <option value="airdrop">Airdrop</option>
+            <option value="testnet">Testnet</option>
+            <option value="node">Node</option>
+        </select>
+        </div>
+
+        <div class="overflow-x-auto mt-0 rounded-lg shadow-lg max-h-[500px] overflow-y-auto">
+            <table class="min-w-full bg-surface text-left rounded-lg">
+                <thead class="bg-primary text-white sticky top-0">
+                    <tr>
+                        <th class="py-3 px-4">Name</th>
+                        <th class="py-3 px-4 hidden sm:table-cell">Status</th>
+                        <th class="py-3 px-4">Detail</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable" class="divide-y divide-gray-700"></tbody>
+            </table>
+        </div>
+
+        <!-- Modal -->
+        <div id="detailModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-surface p-6 rounded-lg max-w-lg w-full shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Detail Information</h2>
+                <div class="space-y-2">
+                    <p><strong>Name:</strong> <span id="modalName"></span></p>
+                    <p><strong>Type:</strong> <span id="modalType"></span></p>
+                    <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+                    <p><strong>Detail:</strong> <span id="modalDetail"></span></p>
+                    <p><strong>Link:</strong> <a id="modalLink" href="#" target="_blank" class="text-blue-400 underline"></a></p>
+                </div>
+                <button class="mt-4 px-4 py-2 bg-primary rounded hover:bg-blue-600 w-full" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('https://opensheet.elk.sh/19w4C2DZ8-ve_269qt6_I69g2cf6z6JkAdpdrlu8onWM/Sheet1')
+            .then(res => res.json())
+            .then(data => {
+                const table = document.getElementById('dataTable');
+                const typeFilter = document.getElementById('typeFilter');
+
+                function renderTable(filteredData) {
+                    table.innerHTML = filteredData.map(item => `
+                        <tr class="hover:bg-surface/50 transition">
+                            <td class="py-3 px-4">${item.nama}</td>
+                            <td class="py-3 px-4 text-${item.status === 'Live' ? 'green-400' : 'red-400'} hidden sm:table-cell">${item.status}</td>
+                            <td class="py-3 px-4"><button class="text-primary underline" onclick="showModal('${item.nama}', '${item.tipe}', '${item.status}', '${item.detail}', '${item.link}')">View Details</button></td>
+                        </tr>
+                    `).join('');
+                }
+
+                renderTable(data);
+
+                typeFilter.addEventListener('change', () => {
+                    const filteredData = typeFilter.value ? data.filter(item => item.tipe === typeFilter.value) : data;
+                    renderTable(filteredData);
+                });
+
+                function filterData() {
+                    const searchText = searchInput.value.toLowerCase();
+                    const filteredData = data.filter(item =>
+                        (typeFilter.value ? item.tipe === typeFilter.value : true) &&
+                        (item.nama.toLowerCase().includes(searchText) || item.detail.toLowerCase().includes(searchText))
+                    );
+                    renderTable(filteredData);
+                }
+
+                renderTable(data);
+
+                typeFilter.addEventListener('change', filterData);
+                searchInput.addEventListener('input', filterData);
+
+            });
+
+        function showModal(name, type, status, detail, link) {
+            document.getElementById('modalName').textContent = name;
+            document.getElementById('modalType').textContent = type;
+            document.getElementById('modalStatus').textContent = status;
+            document.getElementById('modalDetail').textContent = detail;
+            document.getElementById('modalLink').textContent = link;
+            document.getElementById('modalLink').href = link;
+            document.getElementById('detailModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
