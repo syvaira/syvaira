@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aztec Validator Info</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      background: #0c0c0d;
+      color: #e4e4e4;
+      padding: 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+    h1 { color: #00ffa3; text-align: center; margin-bottom: 20px; }
+    input, button, select {
+      width: 100%; padding: 12px; font-size: 16px;
+      border-radius: 8px; border: none; margin-bottom: 12px;
+    }
+    input, select { background: #1a1a1d; color: #fff; }
+    button { background: #00ffa3; color: #000; font-weight: bold; cursor: pointer; }
+    .card {
+      background: #1a1a1d;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .validator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .validator-box {
+      background: #18181b;
+      border: 1px solid #333;
+      padding: 12px;
+      border-radius: 8px;
+      color: #00ffa3;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .validator-box:hover {
+      background: #252525;
+    }
+    .footer {
+      text-align: center;
+      color: #999;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #1a1a1d;
+      padding: 20px;
+      border-radius: 10px;
+      max-height: 90vh;
+      overflow-y: auto;
+      width: 95%;
+      max-width: 900px;
+    }
+    .modal-close {
+      background: none;
+      color: #fff;
+      border: none;
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    canvas {
+      max-width: 400px;
+      margin: 20px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔷 Aztec Validator Info 🔷</h1>
+  <input type="text" id="validatorAddress" placeholder="Enter validator address…" />
+  <button id="lookupBtn">Check Validator</button>
+  <button id="viewValidatorsBtn">📜 View All Validators</button>
+  <div id="result">🟡 Waiting for input…</div>
+  <div id="networkInfo"></div>
+
+  <div id="validatorModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">✖</button>
+      <h2>🧾 All Validators</h2>
+      <select id="statusFilter">
+        <option value="All">All Status</option>
+        <option value="Active">Active</option>
+        <option value="Pending Exit">Pending Exit</option>
+        <option value="Exited">Exited</option>
+        <option value="Unknown">Unknown</option>
+      </select>
+      <canvas id="chartCanvas"></canvas>
+      <div id="paginationInfo" style="text-align:center; margin:10px 0; font-size:14px;"></div>
+      <div id="allValidatorsContent">Loading...</div>
+      <div style="text-align:center; margin-top:10px;">
+        <button id="loadMoreBtn" style="display:none;">🔽 Load More</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Made with ❤️ by <strong>Syvaira</strong></div>
+
+  <script>
+    (async function () {
+      const provider = new ethers.providers.StaticJsonRpcProvider(
+        'https://ethereum-sepolia.publicnode.com',
+        { name: 'sepolia', chainId: 11155111 }
+      );
+
+      const contractAddr = '0xeE6d4e937f0493Fb461F28A75Cf591f1dBa8704E';
+      const abi = [
+        { name: "getInfo", inputs: [{ name: "validator", type: "address" }], outputs: [
+            { name: "stakedAmount", type: "uint256" },
+            { name: "proposer", type: "address" },
+            { name: "withdrawer", type: "address" },
+            { name: "status", type: "uint8" }
+          ], stateMutability: "view", type: "function" },
+        { name: "getAttesters", inputs: [], outputs: [{ type: "address[]" }], stateMutability: "view", type: "function" }
+      ];
+      const contract = new ethers.Contract(contractAddr, abi, provider);
+
+      const allAttesters = await contract.getAttesters();
+      const perPage = 50;
+      let currentPage = 1;
+      let totalPages = Math.ceil(allAttesters.length / perPage);
+
+      const block = await provider.getBlock('latest');
+      document.getElementById('networkInfo').innerHTML = `
+        <div class="card">
+          <h2>🌐 Network Info</h2>
+          <p><strong>⛓️ Chain:</strong> Sepolia</p>
+          <p><strong>📦 Block Number:</strong> ${block.number}</p>
+          <p><strong>⏱️ Timestamp:</strong> ${new Date(block.timestamp * 1000).toLocaleString()}</p>
+          <p><strong>⛽ Gas Limit:</strong> ${block.gasLimit.toString()}</p>
+          <p><strong>🔥 Base Fee:</strong> ${block.baseFeePerGas ? ethers.utils.formatUnits(block.baseFeePerGas, 'gwei') + ' Gwei' : 'Not available'}</p>
+        </div>`;
+
+      async function lookup() {
+        const addr = document.getElementById("validatorAddress").value.trim();
+        const resultDiv = document.getElementById("result");
+        if (!ethers.utils.isAddress(addr)) {
+          resultDiv.innerText = "❌ Invalid address";
+          return;
+        }
+        resultDiv.innerText = "⏳ Fetching validator info…";
+        try {
+          const info = await contract.getInfo(addr);
+          const statusDesc = ["Unknown", "Active", "Pending Exit", "Exited"][info.status] || "Unknown";
+          resultDiv.innerHTML = `
+<div class="card">
+  <h2>📋 Validator Details</h2>
+  <p><strong>🔑 Address:</strong> ${addr}</p>
+  <p><strong>💰 Staked Amount:</strong> ${ethers.utils.formatEther(info.stakedAmount)} STK</p>
+  <p><strong>👤 Proposer:</strong> ${info.proposer}</p>
+  <p><strong>💼 Withdrawer:</strong> ${info.withdrawer}</p>
+  <p><strong>🔢 Status:</strong> ${statusDesc}</p>
+</div>`;
+        } catch (err) {
+          resultDiv.innerHTML = `<span style="color:red;">❌ Error:</span> ${err.message}`;
+        }
+      }
+
+      async function renderValidatorList() {
+        const listDiv = document.getElementById("allValidatorsContent");
+        const filter = document.getElementById("statusFilter").value;
+        const list = document.createElement("div");
+        list.className = "validator-grid";
+        const start = (currentPage - 1) * perPage;
+        const end = Math.min(start + perPage, allAttesters.length);
+        document.getElementById("paginationInfo").innerText = `Total Validators: ${allAttesters.length} | Page ${currentPage} of ${totalPages}`;
+
+        const subset = allAttesters.slice(start, end);
+        const statusMap = {};
+        let statusCounts = { Active: 0, "Pending Exit": 0, Exited: 0, Unknown: 0 };
+
+        for (const addr of subset) {
+          try {
+            const { status } = await contract.getInfo(addr);
+            const desc = ["Unknown", "Active", "Pending Exit", "Exited"][status] || "Unknown";
+            statusMap[addr] = desc;
+            statusCounts[desc]++;
+          } catch {}
+        }
+
+        subset.forEach(addr => {
+          if (filter !== "All" && statusMap[addr] !== filter) return;
+          const box = document.createElement("div");
+          box.className = "validator-box";
+          box.innerHTML = `<div><strong>${statusMap[addr]}</strong></div><div style="font-size:12px;">${addr}</div>`;
+          box.onclick = () => {
+            document.getElementById("validatorAddress").value = addr;
+            lookup();
+            document.getElementById("validatorModal").style.display = "none";
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          };
+          list.appendChild(box);
+        });
+
+        listDiv.innerHTML = "";
+        listDiv.appendChild(list);
+
+        const ctx = document.getElementById("chartCanvas").getContext("2d");
+        if (window.validatorChart) window.validatorChart.destroy();
+        window.validatorChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: Object.keys(statusCounts),
+            datasets: [{
+              label: 'Validator Status Distribution',
+              data: Object.values(statusCounts),
+              backgroundColor: ["#00ffa3", "#ffaa00", "#ff4c4c", "#888"]
+            }]
+          },
+          options: { responsive: true }
+        });
+
+        document.getElementById("loadMoreBtn").style.display = currentPage < totalPages ? "inline-block" : "none";
+      }
+
+      document.getElementById("lookupBtn").onclick = lookup;
+      document.getElementById("viewValidatorsBtn").onclick = () => {
+        currentPage = 1;
+        document.getElementById("validatorModal").style.display = "flex";
+        renderValidatorList();
+      };
+      document.getElementById("loadMoreBtn").onclick = () => {
+        currentPage++;
+        renderValidatorList();
+      };
+      document.getElementById("closeModal").onclick = () => {
+        document.getElementById("validatorModal").style.display = "none";
+      };
+      document.getElementById("statusFilter").onchange = () => {
+        currentPage = 1;
+        renderValidatorList();
+      };
+    })();
+  </script>
+</body>
+</html>
